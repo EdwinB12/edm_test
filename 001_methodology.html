@@ -14586,7 +14586,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     </script>
     <!-- End of mathjax configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
 
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14602,7 +14604,22 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Data-Sources">Data Sources<a class="anchor-link" href="#Data-Sources">&#182;</a></h2>
+<h2 id="Data-Sources">Data Sources<a class="anchor-link" href="#Data-Sources">&#182;</a></h2><h4 id="Metered-Electricity-Demand">Metered Electricity Demand<a class="anchor-link" href="#Metered-Electricity-Demand">&#182;</a></h4><p>30 minute metered electricity demand from January 2019 - January 2022. Data was accessed from the Western Power Distribution (WPD) data portal over 3 different Electrical Supply Levels (ESAs):</p>
+<ul>
+<li>81 Grid Supply Points (GSPs)</li>
+<li>150 Bulk Supply Point (BSPs)</li>
+<li>924 Primary Substations</li>
+</ul>
+<h3 id="Verisk-(Geomni)">Verisk (Geomni)<a class="anchor-link" href="#Verisk-(Geomni)">&#182;</a></h3><p>Information about the buildings within an ESA:</p>
+<ul>
+<li>number of premises</li>
+<li>mean bedroom count</li>
+<li>proportion_premise_use_* where the * could be residential or industry or health etc.</li>
+</ul>
+<h4 id="EXPERIAN---MOSAIC">EXPERIAN - MOSAIC<a class="anchor-link" href="#EXPERIAN---MOSAIC">&#182;</a></h4><p>Consumer classification system. The population is grouped into 15 groups based on consumer behaviour. The features we currently include are the proportions of people within the ESA that belong to each group.</p>
+<h3 id="PV">PV<a class="anchor-link" href="#PV">&#182;</a></h3><p>Estimation of the amount of PV embedded energy generated within an ESA as a function of time.</p>
+<h4 id="Weather">Weather<a class="anchor-link" href="#Weather">&#182;</a></h4><p>Rainfall, Temperature and Radiation measurements</p>
+
 </div>
 </div>
 </div>
@@ -14612,7 +14629,26 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Model-Training">Model Training<a class="anchor-link" href="#Model-Training">&#182;</a></h2>
+<h2 id="Model-Training">Model Training<a class="anchor-link" href="#Model-Training">&#182;</a></h2><p>The diagram below describes the workflow associated with training and then using the model.</p>
+<p><img src="Deliverables_Images.png" alt="Schematic of the training and inference workflow" /></p>
+<p>Figure 1: Training and Inference workflow</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Model-Training">Model Training<a class="anchor-link" href="#Model-Training">&#182;</a></h3><p>Firstly, we split the ESA's into three different sets:</p>
+<ul>
+<li>Train: ESA's used for training the model. Important that this data is not used to evaluate the model.</li>
+<li>Validation : ESA's for monitoring the models performance during training and is used to determine when to stop training the model.</li>
+<li>Test: Unseen dataset used for evaluating the models performance. Data is kept completely seperate from training.</li>
+</ul>
+
 </div>
 </div>
 </div>
